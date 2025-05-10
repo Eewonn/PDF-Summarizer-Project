@@ -31,4 +31,14 @@ class PDFService:
             return page.get_text()
         except IndexError:
             raise HTTPException(status_code=400, detail=f"Page {page_number} not found")
+        
+    def extract_all_text(self) -> list[str]:
+        texts = []
+        for page_number in range(self.doc.page_count):
+            texts.append(self.extract_text(page_number))
+        return texts
+
+    def close_pdf(self):
+        if self.doc:
+            self.doc.close()
 

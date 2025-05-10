@@ -26,11 +26,13 @@ async def upload_pdf(file: UploadFile = File(...)):
         pdf_service.open_pdf(temp_path)
 
         #return text from first page
-        text = pdf_service.extract_text(0)
+        all_texts = pdf_service.extract_all_text()
+
+        pdf_service.close_pdf()
         
         return {
             "filename": file.filename,
-            "text": text
+            "texts": all_texts
         }
     
     finally:
