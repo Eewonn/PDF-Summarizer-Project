@@ -1,9 +1,9 @@
-   fastapi
-   uvicorn
-   python-multipart
-   pydantic
-   python-dotenv
-   openai
-   PyMuPDF
-   gTTS
-   moviepy
+fastapi
+uvicorn
+python-multipart
+pydantic
+python-dotenv
+openai
+PyMuPDF
+gTTS
+moviepy
